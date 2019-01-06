@@ -1,1 +1,2 @@
 java -cp "stanford-ner.jar:lib/*" -mx4g edu.stanford.nlp.ie.crf.CRFClassifier -prop train/prop.txt
+java -classpath stanford-postagger-3.5.1.jar edu.stanford.nlp.tagger.maxent.MaxentTagger -prop swedish-tagger.props
