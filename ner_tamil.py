@@ -12,9 +12,7 @@ sentence = u"சென்னை நகருக்கு நீண்ட வர�
 
 jar = 'stanford-ner-tagger/stanford-ner.jar'
 model = 'stanford-ner-tagger/ner-model-tamil.ser.gz'
-
-ner_tagger = StanfordNERTagger(model, jar, encoding='utf8')
-
-words = nltk.word_tokenize(sentence)
-print (words)
-print(ner_tagger.tag(words))
+def ner():
+    ner_tagger = StanfordNERTagger(model, jar, encoding='utf8')
+    words = nltk.word_tokenize(sentence)
+    return(ner_tagger.tag(words))
