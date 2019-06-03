@@ -8,6 +8,9 @@ jar = "stanford-pos-tagger/stanford-postagger-3.9.2.jar"
 model="stanford-pos-tagger/tamil-pos-tagger-model"
 
 myTagger = StanfordPOSTagger(model,jar)
-sentence=u"கோயம்புத்தூர் மாவட்டமும் இம்மாவட்டத்தின் எல்லைகளாக அமைந்துள்ளன"
-
-print(myTagger.tag(sentence.split()))
+#sentence=u"கோயம்புத்தூர் மாவட்டமும் இம்மாவட்டத்தின் எல்லைகளாக அமைந்துள்ளன"
+def pos_tag(tokenized_sentences):
+    sentences=[]
+    for sentence in tokenized_sentences:
+        sentences.append(myTagger.tag(sentence))
+    return sentences

@@ -1,7 +1,12 @@
-import ner_tamil
-def namedEntityRecog(sentences) :
+import ner_tamil,os
+def namedEntityRecog(sentences,cwd) :
     counts = []
     for sentence in sentences :
-        count = len(ner_tamil.ner(sentence))
+        words=[]
+        for nameEntity in ner_tamil.ner(sentence,cwd):
+            if nameEntity[1] != 'O':
+                words.append(nameEntity)
+        count = len(words)
         counts.append(count)
     return counts
+

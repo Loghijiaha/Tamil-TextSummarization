@@ -3,7 +3,6 @@ def paraPos(paragraphs):
     scores = []
     for para in paragraphs:
         sentences = tSeg.split_into_sentences(para)
-        print(len(sentences))
         if len(sentences) == 1 :
             scores.append(1.0)
         elif len(sentences) == 2 :

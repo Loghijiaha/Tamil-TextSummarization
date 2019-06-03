@@ -7,6 +7,7 @@ to those without visible-visible and hidden-hidden connections.
 
 from __future__ import print_function
 
+import pickle
 import timeit
 
 try:
@@ -361,6 +362,7 @@ class RBM(object):
         return cross_entropy
 
 
+
 def test_rbm(dataset,learning_rate=0.1, training_epochs=5, batch_size=4,n_chains=4,
              n_hidden=7):
     """
@@ -508,10 +510,8 @@ def test_rbm(dataset,learning_rate=0.1, training_epochs=5, batch_size=4,n_chains
     print(W)
     print(H)
     print(V)
-
     print("\n\n\nEnhanced Feature Matrix: ")
     temp = numpy.dot(dataset, numpy.transpose(W))
     print(temp)
     dataframe = pd.DataFrame(data=temp.astype(float))
-    dataframe.to_csv('enhancedFMatrix.csv', sep=' ', header=False, float_format='%.4f', index=False)
     return temp
